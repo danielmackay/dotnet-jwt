@@ -47,7 +47,7 @@ public class LoginController : ControllerBase
             _config["Jwt:Audience"],
             claims,
             null,                               // Note Before
-            DateTime.UtcNow.AddMinutes(15),     // Expiry, NOTE: May need to be local time
+            DateTime.Now.AddMinutes(15),        // Expiry, NOTE: May need to be local time
             credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
